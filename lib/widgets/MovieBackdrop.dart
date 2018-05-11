@@ -11,8 +11,7 @@ class MovieBackdrop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180.0,
-      decoration: BoxDecoration(color: Colors.grey[300]),
+      height: 210.0,
       child: Image.network(
         imgConfig.buildBackdropUrl(movie.backdrop),
         fit: BoxFit.cover,

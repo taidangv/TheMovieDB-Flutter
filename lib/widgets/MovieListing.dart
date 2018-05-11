@@ -13,7 +13,7 @@ class MovieListing extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: movies.length,
-        padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
+        //padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
         itemBuilder: (context, idx) {
           return _buildRow(movies[idx]);
         });

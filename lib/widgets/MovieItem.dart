@@ -13,7 +13,6 @@ class MovieItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      padding: EdgeInsets.only(top: 2.0, bottom: 2.0, left: 4.0, right: 4.0),
       child: Stack(
         fit: StackFit.passthrough,
         alignment: AlignmentDirectional.bottomStart,

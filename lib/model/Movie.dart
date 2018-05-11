@@ -1,10 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:the_movie_db/model/Genre.dart';
 
 part 'Movie.g.dart';
 
 @JsonSerializable()
 class Movie extends Object with _$MovieSerializerMixin {
-  Movie(this.id, this.name, this.brief, this.poster, this.backdrop, this.vote, this.releaseDate);
+  Movie();
 
   int id;
   @JsonKey(name: 'title')
@@ -19,6 +20,11 @@ class Movie extends Object with _$MovieSerializerMixin {
   double vote;
   @JsonKey(name: 'release_date')
   String releaseDate;
+  @JsonKey(name: 'genre_ids')
+  List<int> genreIds;
+
+  @JsonKey(ignore: true)
+  List<Genre> genres;
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 }

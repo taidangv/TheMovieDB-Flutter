@@ -13,7 +13,7 @@ class MovieOverlayInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           _buildTitle(),
-          _buildVote(),
+          _buildSubtitle(),
         ],
       ),
       EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0, bottom: 7.0),
@@ -45,15 +45,21 @@ class MovieOverlayInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildVote() {
+  Widget _buildSubtitle() {
     return Container(
       child: Text(
-        'IMDB ${movie.vote.toString()}',
+        _getGenresDisplay(),
         style: TextStyle(
-          color: Colors.grey[400],
+          color: Colors.grey[300],
           fontWeight: FontWeight.w200,
         ),
       ),
     );
+  }
+
+  String _getGenresDisplay() {
+    return movie.genres.map((e) {
+      return e.name;
+    }).join(', ');
   }
 }

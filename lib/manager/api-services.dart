@@ -7,6 +7,7 @@ import 'package:the_movie_db/manager/parser.dart' as parser;
 import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
+import 'data-cache.dart' as dataCache;
 
 const String _API_PATH_CONFIG = 'configuration';
 const String _API_PATH_GENRES = 'genre/movie/list';
@@ -30,6 +31,7 @@ Future<List<Genre>> getGenres() async {
 
 Future<List<Movie>> getMovies() async {
   http.Response response = await http.get(_buildApiUrl(_API_PATH_MOVIES));
+  List<Genre> genres = await dataCache.getGenres();
   List<dynamic> rawResults = json.decode(response.body)['results'];
-  return parser.parseMovies(rawResults);
+  return parser.parseMovies(rawResults, genres);
 }

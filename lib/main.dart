@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'TheMovieDB',
       theme: ThemeData(
         primaryColor: Color(0xFF252525),
-        backgroundColor: Color(0xFF444444),
+        backgroundColor: Color(0xFF3A3A3A),
         accentColor: Color(0xFFDDC40B),
       ),
       home: SplashPage(),

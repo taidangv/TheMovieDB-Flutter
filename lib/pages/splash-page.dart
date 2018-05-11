@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pageBody(context),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 
@@ -27,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'The Movie DB',
+            'TMDB',
             style: TextStyle(fontSize: 20.0, color: Colors.white),
           ),
           Container(

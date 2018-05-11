@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_db/pages/splash-page.dart';
+import 'package:the_movie_db/pages/SplashPage.dart';
 
 void main() => runApp(MyApp());
 

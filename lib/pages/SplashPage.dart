@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
-import 'package:the_movie_db/pages/home-page.dart';
+import 'package:the_movie_db/pages/HomePage.dart';
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/manager/api-services.dart' as apiServices;
 import 'package:the_movie_db/widgets/AppSpinner.dart';
@@ -42,12 +43,18 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    _loadImagesConfig();
+    _loadConfig();
   }
 
-  Future _loadImagesConfig() async {
+  Future _loadConfig() async {
     ImagesConfig imgConfig = await apiServices.getImagesConfig();
+    List<Genre> genres = await apiServices.getGenres();
     dataCache.saveImagesConfig(imgConfig);
+    dataCache.saveGenres(genres);
+
+    print(imageCache.toString());
+    print(genres.toString());
+
     Navigator.pushAndRemoveUntil(context,
         MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }

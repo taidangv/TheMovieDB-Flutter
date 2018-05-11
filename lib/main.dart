@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TheMovieDB',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.blue[800],
+        primaryColor: Color(0xFF252525),
+        backgroundColor: Color(0xFF444444),
+        accentColor: Color(0xFFDDC40B),
       ),
       home: SplashPage(),
     );

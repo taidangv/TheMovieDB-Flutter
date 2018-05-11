@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/manager/data-cache.dart' as cache;
 import 'package:the_movie_db/manager/api-services.dart' as repo;
+import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/widgets/AppSpinner.dart';
-import 'package:the_movie_db/widgets/MovieItem.dart';
+import 'package:the_movie_db/widgets/MovieListing.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String _imagesConfig;
+  ImagesConfig _imagesConfig;
   List<Movie> _movies;
 
   @override
@@ -22,8 +23,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _getImagesConfig() async {
-    String json = await cache.getImagesConfig();
-    _imagesConfig = json;
+    _imagesConfig = await cache.getImagesConfig();
   }
 
   _getMovies() async {
@@ -36,8 +36,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home Page")),
+      appBar: AppBar(title: Text("In Theatres")),
       body: _buildBody(),
+      backgroundColor: Theme.of(context).backgroundColor,
     );
   }
 
@@ -45,19 +46,7 @@ class _HomePageState extends State<HomePage> {
     if (_movies == null || _movies.isEmpty) {
       return Center(child: AppSpinner());
     } else {
-      return _buildListView();
+      return MovieListing(_movies, _imagesConfig);
     }
-  }
-
-  Widget _buildListView() {
-    return ListView.builder(
-        itemCount: _movies.length,
-        itemBuilder: (context, idx) {
-          return _buildRow(_movies[idx]);
-        });
-  }
-
-  Widget _buildRow(Movie m) {
-    return MovieItem(key: ObjectKey(m.id), movie: m);
   }
 }

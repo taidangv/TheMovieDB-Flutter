@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/pages/home-page.dart';
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/manager/api-services.dart' as apiServices;
@@ -14,7 +15,10 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _pageBody(context));
+    return Scaffold(
+      body: _pageBody(context),
+      backgroundColor: Theme.of(context).backgroundColor,
+    );
   }
 
   Widget _pageBody(BuildContext context) {
@@ -24,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
         children: <Widget>[
           Text(
             'The Movie DB',
-            style: TextStyle(fontSize: 20.0),
+            style: TextStyle(fontSize: 20.0, color: Colors.white),
           ),
           Container(
             child: AppSpinner(),
@@ -42,9 +46,9 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future _loadImagesConfig() async {
-    String json = await apiServices.getImagesConfig();
-    dataCache.saveImagesConfig(json);
-    Navigator.pushAndRemoveUntil(
-        context, MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+    ImagesConfig imgConfig = await apiServices.getImagesConfig();
+    dataCache.saveImagesConfig(imgConfig);
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }
 }

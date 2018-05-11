@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/widgets/MovieItem.dart';
+import 'package:the_movie_db/widgets/MovieItemWidget.dart';
 
-class MovieListing extends StatelessWidget {
-  MovieListing(this.movies, this.imgConfig);
+class MovieListingWidget extends StatelessWidget {
+  MovieListingWidget(this.movies, this.imgConfig);
 
   final List<Movie> movies;
   final ImagesConfig imgConfig;
@@ -20,6 +20,6 @@ class MovieListing extends StatelessWidget {
   }
 
   Widget _buildRow(Movie m) {
-    return MovieItem(key: ObjectKey(m.id), movie: m, imgConfig: imgConfig);
+    return MovieItemWidget(key: ObjectKey(m.id), movie: m, imgConfig: imgConfig);
   }
 }

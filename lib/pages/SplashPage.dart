@@ -6,7 +6,7 @@ import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/pages/HomePage.dart';
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/manager/api-services.dart' as apiServices;
-import 'package:the_movie_db/widgets/AppSpinner.dart';
+import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
             style: TextStyle(fontSize: 20.0, color: Colors.white),
           ),
           Container(
-            child: AppSpinner(),
+            child: AppSpinnerWidget(),
             margin: EdgeInsets.only(top: 40.0),
           ),
         ],

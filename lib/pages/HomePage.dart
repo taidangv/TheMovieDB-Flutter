@@ -3,8 +3,8 @@ import 'package:the_movie_db/manager/data-cache.dart' as cache;
 import 'package:the_movie_db/manager/api-services.dart' as repo;
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/widgets/AppSpinner.dart';
-import 'package:the_movie_db/widgets/MovieListing.dart';
+import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
+import 'package:the_movie_db/widgets/MovieListingWidget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildBody() {
     if (_movies == null || _movies.isEmpty) {
-      return Center(child: AppSpinner());
+      return Center(child: AppSpinnerWidget());
     } else {
-      return MovieListing(_movies, _imagesConfig);
+      return MovieListingWidget(_movies, _imagesConfig);
     }
   }
 }

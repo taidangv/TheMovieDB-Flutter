@@ -34,7 +34,7 @@ class TitleOverlayWidget extends StatelessWidget {
       style: TextStyle(
         fontSize: 23.0,
         color: Colors.white,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w100,
       ),
     );
   }
@@ -44,7 +44,7 @@ class TitleOverlayWidget extends StatelessWidget {
       movie.genres.map((g) => g.name).join(', '),
       style: TextStyle(
         color: Colors.grey[300],
-        fontWeight: FontWeight.w200,
+        fontWeight: FontWeight.w100,
       ),
     );
   }

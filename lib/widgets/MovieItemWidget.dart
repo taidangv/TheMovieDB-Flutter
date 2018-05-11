@@ -22,7 +22,7 @@ class MovieItemWidget extends StatelessWidget {
           _buildOverlayMovieName(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[VoteWidget(movie.vote)],
+            children: <Widget>[VoteWidget(movie.vote, movie.releaseDate)],
           )
         ],
       ),

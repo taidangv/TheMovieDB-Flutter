@@ -23,19 +23,12 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Widget _pageBody(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'TMDB',
-            style: TextStyle(fontSize: 20.0, color: Colors.white),
-          ),
-          Container(
-            child: AppSpinnerWidget(),
-            margin: EdgeInsets.only(top: 40.0),
-          ),
-        ],
+    return new Container(
+      child: Center(child: AppSpinnerWidget()),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/loading_screen.jpg'),
+        ),
       ),
     );
   }

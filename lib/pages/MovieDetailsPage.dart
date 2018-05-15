@@ -44,8 +44,26 @@ class _DetailsPageState extends State<MovieDetailsPage> {
         PosterDescriptionWidget(
             _imageConfig.buildPosterUrl(widget._movieOverview.poster),
             _details.overview),
-        CastListingWidget(widget._movieOverview.id),
+        _castsLabel(),
+        _castsListing(),
       ],
+    );
+  }
+
+  Widget _castsLabel() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10.0, top: 10.0),
+      child: Text('Casts', style: TextStyle(fontSize: 18.0)),
+    );
+  }
+
+  Widget _castsListing() {
+    return Padding(
+      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+      child: new Container(
+        height: 220.0,
+        child: CastListingWidget(widget._movieOverview.id),
+      ),
     );
   }
 

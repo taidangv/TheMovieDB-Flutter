@@ -21,27 +21,14 @@ class _CastListingWidgetState extends State<CastListingWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-      child: (_casts == null) ? _spinner() : _listingWidget(),
-    );
-  }
-
-  Widget _spinner() {
-    return Center(child: AppSpinnerWidget());
-  }
-
-  Widget _listingWidget() {
-    //return CastItemWidget(_casts[0], _imgConfig);
-    return new Container(
-      height: 180.0,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: _casts.length,
-        itemBuilder: (context, index) =>
-            CastItemWidget(_casts[index], _imgConfig),
-      ),
-    );
+    return (_casts == null)
+        ? Center(child: AppSpinnerWidget())
+        : ListView.builder(
+            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+            scrollDirection: Axis.horizontal,
+            itemCount: _casts.length,
+            itemBuilder: (_, idx) => CastItemWidget(_casts[idx], _imgConfig),
+          );
   }
 
   @override

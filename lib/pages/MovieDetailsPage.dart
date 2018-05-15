@@ -7,6 +7,7 @@ import 'package:the_movie_db/manager/api-services.dart' as apiServices;
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/widgets/BackdropWidget.dart';
 import 'package:the_movie_db/widgets/MoviePrimaryInfoWidget.dart';
+import 'package:the_movie_db/widgets/PosterDescriptionWidget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   MovieDetailsPage(this._movieOverview);
@@ -39,6 +40,9 @@ class _DetailsPageState extends State<MovieDetailsPage> {
       children: <Widget>[
         BackdropWidget(widget._movieOverview, _imageConfig),
         MoviePrimaryInfoWidget(widget._movieOverview, _details),
+        PosterDescriptionWidget(
+            _imageConfig.buildPosterUrl(widget._movieOverview.poster),
+            _details.overview),
       ],
     );
   }

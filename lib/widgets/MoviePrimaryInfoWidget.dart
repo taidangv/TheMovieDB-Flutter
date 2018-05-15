@@ -14,6 +14,7 @@ class MoviePrimaryInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10.0),
+      margin: EdgeInsets.only(top: 5.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
@@ -30,7 +31,7 @@ class MoviePrimaryInfoWidget extends StatelessWidget {
       overview.name,
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 25.0,
+        fontSize: 26.0,
         fontWeight: FontWeight.w200,
       ),
     );

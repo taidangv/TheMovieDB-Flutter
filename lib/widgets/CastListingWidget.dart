@@ -24,7 +24,7 @@ class _CastListingWidgetState extends State<CastListingWidget> {
     return (_casts == null)
         ? Center(child: AppSpinnerWidget())
         : ListView.builder(
-            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+            padding: EdgeInsets.only(left: 7.0, right: 7.0),
             scrollDirection: Axis.horizontal,
             itemCount: _casts.length,
             itemBuilder: (_, idx) => CastItemWidget(_casts[idx], _imgConfig),

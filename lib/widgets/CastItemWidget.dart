@@ -3,30 +3,36 @@ import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 
 class CastItemWidget extends StatelessWidget {
-  CastItemWidget(this._cast, this.imgConfig) : super(key: ObjectKey(_cast.id));
+  CastItemWidget(this._cast, this._imgConfig) : super(key: ObjectKey(_cast.id));
 
   final Cast _cast;
-  final ImagesConfig imgConfig;
+  final ImagesConfig _imgConfig;
+  final double _itemWidth = 90.0;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        _profilePic(),
-        _name(),
-        _character(),
-      ],
+    return Container(
+      width: _itemWidth,
+      margin: EdgeInsets.only(left: 3.0, right: 3.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _profilePic(),
+          _name(),
+          _character(),
+        ],
+      ),
     );
   }
 
   Widget _profilePic() {
     return Container(
+      width: _itemWidth,
+      height: 130.0,
       margin: EdgeInsets.only(bottom: 5.0),
-      width: 100.0,
-      height: 125.0,
+      decoration: BoxDecoration(border: Border.all(color: Colors.grey[700])),
       child: Image.network(
-        imgConfig.buildProfilePicUrl(_cast.profilePath),
+        _imgConfig.buildProfilePicUrl(_cast.profilePath),
         fit: BoxFit.cover,
       ),
     );
@@ -37,7 +43,7 @@ class CastItemWidget extends StatelessWidget {
       _cast.name,
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 11.0,
+        fontSize: 13.0,
       ),
     );
   }

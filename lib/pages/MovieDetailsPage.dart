@@ -6,7 +6,6 @@ import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/manager/api-services.dart' as apiServices;
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/widgets/BackdropWidget.dart';
-import 'package:the_movie_db/widgets/VoteWidget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   MovieDetailsPage(this._movieOverview);
@@ -26,6 +25,7 @@ class _DetailsPageState extends State<MovieDetailsPage> {
     return Scaffold(
       appBar: AppBar(title: Text(widget._movieOverview.name)),
       body: _details == null ? _buildLoadingBody() : _buildContentBody(),
+      backgroundColor: Theme.of(context).backgroundColor,
     );
   }
 

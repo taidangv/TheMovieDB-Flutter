@@ -27,7 +27,6 @@ class VoteWidget extends StatelessWidget {
           Text(
             vote.toString(),
             style: TextStyle(
-              color: Colors.white,
               fontSize: 25.0,
               fontWeight: FontWeight.w100,
             ),
@@ -47,7 +46,6 @@ class VoteWidget extends StatelessWidget {
     return Text(
       _getFormattedDate(),
       style: TextStyle(
-        color: Colors.white,
         fontSize: 16.0,
         fontWeight: FontWeight.w100,
       ),

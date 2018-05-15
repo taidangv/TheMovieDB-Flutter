@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF0D1C34),
         backgroundColor: Color(0xFF161D29),
         accentColor: Color(0xFFF9473A),
+        textTheme: Theme
+            .of(context)
+            .textTheme
+            .copyWith(body1: new TextStyle(color: Colors.white)),
       ),
       home: SplashPage(),
     );

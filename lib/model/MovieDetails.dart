@@ -24,4 +24,9 @@ class MovieDetails extends Object with _$MovieDetailsSerializerMixin {
 //  val production_countries: JsonElement,
 //  val release_dates: JsonElement
 
+  String getDisplayDuration() {
+    var hour = runtime ~/ 60;
+    var min = runtime % 60;
+    return (hour <= 0) ? "$min min" : "$hour hour $min min";
+  }
 }

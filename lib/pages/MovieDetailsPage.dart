@@ -6,6 +6,7 @@ import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/manager/api-services.dart' as apiServices;
 import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
 import 'package:the_movie_db/widgets/BackdropWidget.dart';
+import 'package:the_movie_db/widgets/MoviePrimaryInfoWidget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   MovieDetailsPage(this._movieOverview);
@@ -36,9 +37,8 @@ class _DetailsPageState extends State<MovieDetailsPage> {
   Widget _buildContentBody() {
     return ListView(
       children: <Widget>[
-        BackdropWidget(movie: widget._movieOverview, imgConfig: _imageConfig),
-        Text(_details.tagline),
-        Text(_details.overview),
+        BackdropWidget(widget._movieOverview, _imageConfig),
+        MoviePrimaryInfoWidget(widget._movieOverview, _details),
       ],
     );
   }

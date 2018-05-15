@@ -18,7 +18,7 @@ class MovieItemWidget extends StatelessWidget {
       child: Stack(
         fit: StackFit.passthrough,
         children: <Widget>[
-          BackdropWidget(movie: movie, imgConfig: imgConfig),
+          BackdropWidget(movie, imgConfig),
           _buildOverlayMovieName(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,

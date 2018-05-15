@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/Movie.dart';
+import 'package:the_movie_db/widgets/ShadowText.dart';
 
 class TitleOverlayWidget extends StatelessWidget {
   TitleOverlayWidget({this.movie});
@@ -20,7 +21,7 @@ class TitleOverlayWidget extends StatelessWidget {
       padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 7.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0x00000000), Color(0xCF000000)],
+          colors: [Color(0x00000000), Color(0x99000000)],
           begin: FractionalOffset.topCenter,
           end: FractionalOffset.bottomCenter,
         ),
@@ -29,7 +30,7 @@ class TitleOverlayWidget extends StatelessWidget {
   }
 
   Widget _buildTitle() {
-    return Text(
+    return ShadowText(
       movie.name,
       style: TextStyle(
         fontSize: 23.0,
@@ -39,7 +40,7 @@ class TitleOverlayWidget extends StatelessWidget {
   }
 
   Widget _buildSubtitle() {
-    return Text(
+    return ShadowText(
       movie.genres.map((g) => g.name).join(', '),
       style: TextStyle(
         color: Colors.grey[400],

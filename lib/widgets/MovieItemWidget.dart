@@ -32,7 +32,7 @@ class MovieItemWidget extends StatelessWidget {
   Widget _buildOverlayMovieName() {
     return Container(
       child: TitleOverlayWidget(movie: movie),
-      margin: EdgeInsets.only(top: 145.0),
+      margin: EdgeInsets.only(top: 150.0),
     );
   }
 }

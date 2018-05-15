@@ -27,6 +27,7 @@ class _SplashPageState extends State<SplashPage> {
       child: Center(child: AppSpinnerWidget()),
       decoration: BoxDecoration(
         image: DecorationImage(
+          fit: BoxFit.cover,
           image: AssetImage('assets/loading_screen.jpg'),
         ),
       ),

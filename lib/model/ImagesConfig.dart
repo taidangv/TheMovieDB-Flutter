@@ -28,5 +28,6 @@ class ImagesConfig extends Object with _$ImagesConfigSerializerMixin {
 
   String buildPosterUrl(String posterPath) => baseUrl + 'w342' + posterPath;
   String buildBackdropUrl(String backdropPath) => baseUrl + 'w780' + backdropPath;
+  String buildProfilePicUrl(String profilePicPath) => baseUrl + 'w185' + profilePicPath;
 
 }

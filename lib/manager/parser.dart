@@ -1,3 +1,4 @@
+import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/Movie.dart';
 
@@ -27,4 +28,13 @@ List<Genre> parseGenres(List<dynamic> raw) {
     genres.add(Genre.fromJson(rawItem));
   });
   return genres;
+}
+
+
+List<Cast> parseCasts(List<dynamic> jsonArr) {
+  List<Cast> result = List();
+  jsonArr.forEach((jsonObj) {
+    result.add(Cast.fromJson(jsonObj));
+  });
+  return result;
 }

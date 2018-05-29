@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:the_movie_db/pages/HomePage.dart';
 import 'package:the_movie_db/redux/app_state.dart';
 import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
 
@@ -22,11 +21,7 @@ class SplashPageBodyContainer extends StatelessWidget {
             ),
           );
         } else {
-          return Text('DONE');
-//          Navigator.pushAndRemoveUntil(
-//              context,
-//              MaterialPageRoute(builder: (context) => HomePage()),
-//              (route) => false);
+          return Container();
         }
       },
     );

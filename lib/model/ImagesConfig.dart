@@ -4,8 +4,7 @@ part 'ImagesConfig.g.dart';
 
 @JsonSerializable()
 class ImagesConfig extends Object with _$ImagesConfigSerializerMixin {
-  ImagesConfig(this.baseUrl, this.secureBaseUrl, this.backdropSizes,
-      this.logoSizes, this.posterSizes, this.profileSizes, this.stillSizes);
+  ImagesConfig();
 
   @JsonKey(name: 'base_url')
   String baseUrl;

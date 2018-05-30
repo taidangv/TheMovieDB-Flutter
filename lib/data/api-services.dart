@@ -9,7 +9,6 @@ import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/model/MovieDetails.dart';
-import 'data-cache.dart' as dataCache;
 
 const String _API_PATH_CONFIG = 'configuration';
 const String _API_PATH_GENRES = 'genre/movie/list';
@@ -27,17 +26,16 @@ Future<ImagesConfig> getImagesConfig() async {
   return ImagesConfig.fromJson(rawResult);
 }
 
-Future<List<Genre>> getGenres() async {
-  http.Response res = await http.get(_buildApiUrl(_API_PATH_GENRES));
-  dynamic rawResult = json.decode(res.body)['genres'];
-  return parser.parseGenres(rawResult);
-}
+//Future<List<Genre>> getGenres() async {
+//  http.Response res = await http.get(_buildApiUrl(_API_PATH_GENRES));
+//  dynamic rawResult = json.decode(res.body)['genres'];
+//  return parser.parseGenres(rawResult);
+//}
 
 Future<List<Movie>> getMovies() async {
   http.Response response = await http.get(_buildApiUrl(_API_PATH_MOVIES));
-  List<Genre> genres = await dataCache.getGenres();
   List<dynamic> rawResults = json.decode(response.body)['results'];
-  return parser.parseMovies(rawResults, genres);
+  return parser.parseMovies(rawResults, []);
 }
 
 Future<MovieDetails> getMovieDetails(int id) async {

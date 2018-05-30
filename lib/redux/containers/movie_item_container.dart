@@ -47,7 +47,7 @@ class _ViewModel {
       onItemClicked: (context, movie) {
         store.dispatch(LoadMovieDetailAction(movie));
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => MovieDetailsPage(movie)));
+            MaterialPageRoute(builder: (context) => MovieDetailsPage()));
       },
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/redux/app_state.dart';
-import 'package:the_movie_db/redux/containers/home_page_container.dart';
+import 'package:the_movie_db/redux/containers/app_loading_container.dart';
 import 'package:the_movie_db/redux/reducers/app_state_reducer.dart';
 import 'package:the_movie_db/redux/middlewares/load_initial_data_middleware.dart';
 
@@ -22,7 +22,7 @@ class ReduxApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: _appTheme(context),
-        home: HomePageContainer(),
+        home: AppLoadingContainer(),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';
 
-class HomePageContainer extends StatelessWidget {
+class AppLoadingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, _ViewModel>(

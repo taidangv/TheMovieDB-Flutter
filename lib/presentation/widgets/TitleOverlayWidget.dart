@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/widgets/ShadowText.dart';
+import 'package:the_movie_db/presentation/widgets/ShadowText.dart';
 
 class TitleOverlayWidget extends StatelessWidget {
   TitleOverlayWidget({this.movie});

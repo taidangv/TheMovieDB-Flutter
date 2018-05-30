@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/model/MovieDetails.dart';
-import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
-import 'package:the_movie_db/manager/api-services.dart' as apiServices;
-import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
-import 'package:the_movie_db/widgets/BackdropWidget.dart';
-import 'package:the_movie_db/widgets/CastListingWidget.dart';
-import 'package:the_movie_db/widgets/MoviePrimaryInfoWidget.dart';
-import 'package:the_movie_db/widgets/PosterDescriptionWidget.dart';
+import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
+import 'package:the_movie_db/data/api-services.dart' as apiServices;
+import 'package:the_movie_db/data/data-cache.dart' as dataCache;
+import 'package:the_movie_db/presentation/widgets/BackdropWidget.dart';
+import 'package:the_movie_db/presentation/widgets/CastListingWidget.dart';
+import 'package:the_movie_db/presentation/widgets/MoviePrimaryInfoWidget.dart';
+import 'package:the_movie_db/presentation/widgets/PosterDescriptionWidget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   MovieDetailsPage(this._movieOverview);

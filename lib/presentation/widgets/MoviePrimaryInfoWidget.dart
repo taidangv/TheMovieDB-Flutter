@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/model/MovieDetails.dart';
-import 'package:the_movie_db/widgets/LabelIconWidget.dart';
+import 'package:the_movie_db/presentation/widgets/LabelIconWidget.dart';
 
 class MoviePrimaryInfoWidget extends StatelessWidget {
   MoviePrimaryInfoWidget(this.overview, this.details);

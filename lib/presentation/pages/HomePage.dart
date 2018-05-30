@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_db/manager/data-cache.dart' as cache;
-import 'package:the_movie_db/manager/api-services.dart' as repo;
+import 'package:the_movie_db/data//data-cache.dart' as cache;
+import 'package:the_movie_db/data/api-services.dart' as repo;
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
-import 'package:the_movie_db/widgets/MovieListingWidget.dart';
+import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
+import 'package:the_movie_db/presentation/widgets/MovieListingWidget.dart';
 
 class HomePage extends StatefulWidget {
   @override

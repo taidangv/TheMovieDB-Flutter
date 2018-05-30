@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/pages/MovieDetailsPage.dart';
-import 'package:the_movie_db/widgets/MovieItemWidget.dart';
+import 'package:the_movie_db/presentation/pages/MovieDetailsPage.dart';
+import 'package:the_movie_db/presentation/widgets/MovieItemWidget.dart';
 
 class MovieListingWidget extends StatelessWidget {
   MovieListingWidget(this.movies, this.imgConfig);

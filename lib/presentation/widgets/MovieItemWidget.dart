@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/widgets/VoteWidget.dart';
-import 'TitleOverlayWidget.dart';
-import 'BackdropWidget.dart';
+import 'package:the_movie_db/presentation/widgets/VoteWidget.dart';
+import 'package:the_movie_db/presentation/widgets/TitleOverlayWidget.dart';
+import 'package:the_movie_db/presentation/widgets/BackdropWidget.dart';
 
 class MovieItemWidget extends StatelessWidget {
   MovieItemWidget({Key key, this.movie, this.imgConfig}) : super(key: key);

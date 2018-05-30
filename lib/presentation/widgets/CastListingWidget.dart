@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_db/manager/api-services.dart' as apiServices;
+import 'package:the_movie_db/data/api-services.dart' as apiServices;
 import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
-import 'package:the_movie_db/widgets/AppSpinnerWidget.dart';
-import 'package:the_movie_db/widgets/CastItemWidget.dart';
-import 'package:the_movie_db/manager/data-cache.dart' as dataCache;
+import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
+import 'package:the_movie_db/presentation/widgets/CastItemWidget.dart';
+import 'package:the_movie_db/data/data-cache.dart' as dataCache;
 
 class CastListingWidget extends StatefulWidget {
   CastListingWidget(this._movieId);

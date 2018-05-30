@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:the_movie_db/keys.dart';
-import 'package:the_movie_db/manager/parser.dart' as parser;
+import 'package:the_movie_db/data/parser.dart' as parser;
 import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';

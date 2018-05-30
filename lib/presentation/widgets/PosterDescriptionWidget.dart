@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_db/widgets/PosterWidget.dart';
+import 'package:the_movie_db/presentation/widgets/PosterWidget.dart';
 
 class PosterDescriptionWidget extends StatelessWidget {
   PosterDescriptionWidget(this._posterUrl, this._description);

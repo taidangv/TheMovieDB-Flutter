@@ -3,11 +3,11 @@ import 'package:the_movie_db/model/ImagesConfig.dart';
 
 @immutable
 class AppState {
-  final bool splashLoading;
+  final bool initialDataDownloading;
   final ImagesConfig imagesConfig;
 
   AppState({
-    this.splashLoading = false,
+    this.initialDataDownloading = false,
     this.imagesConfig,
   });
 
@@ -16,10 +16,10 @@ class AppState {
     ImagesConfig imagesConfig,
   }) {
     return AppState(
-      splashLoading: splashLoading ?? this.splashLoading,
+      initialDataDownloading: splashLoading ?? this.initialDataDownloading,
       imagesConfig: imagesConfig ?? this.imagesConfig,
     );
   }
 
-  factory AppState.loading() => AppState(splashLoading: true);
+  factory AppState.loading() => AppState(initialDataDownloading: true);
 }

@@ -1,7 +1,7 @@
 import 'package:redux/redux.dart';
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';
 
-final splashLoadingReducer = combineReducers<bool>([
+final initialLoadingReducer = combineReducers<bool>([
   TypedReducer<bool, ImagesConfigLoadedAction>(_setLoaded),
   TypedReducer<bool, ImagesConfigNotLoadedAction>(_setLoaded),
 ]);

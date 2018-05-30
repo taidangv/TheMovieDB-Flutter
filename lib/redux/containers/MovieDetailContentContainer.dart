@@ -69,7 +69,11 @@ class _ViewModel {
   final MovieDetails details;
   final ImagesConfig imagesConfig;
 
-  _ViewModel({this.overview, this.details, this.imagesConfig});
+  _ViewModel({
+    this.overview,
+    this.details,
+    this.imagesConfig,
+  });
 
   bool isLoading() => details == null;
 

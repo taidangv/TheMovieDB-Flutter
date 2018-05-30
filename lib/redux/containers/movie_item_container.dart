@@ -19,9 +19,7 @@ class MovieItemContainer extends StatelessWidget {
       converter: _ViewModel.fromStore,
       builder: (context, vm) {
         return GestureDetector(
-          onTap: () {
-            vm.onItemClicked(context, movie);
-          },
+          onTap: () => vm.onItemClicked(context, movie),
           child: MovieItemWidget(
               key: ObjectKey(movie.id),
               movie: movie,
@@ -46,8 +44,9 @@ class _ViewModel {
       imagesConfig: store.state.imagesConfig,
       onItemClicked: (context, movie) {
         store.dispatch(LoadMovieDetailAction(movie));
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => MovieDetailsPage()));
+        Navigator
+            .of(context)
+            .push(MaterialPageRoute(builder: (context) => MovieDetailsPage()));
       },
     );
   }

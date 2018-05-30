@@ -1,6 +1,6 @@
 ## The Movie DB (Flutter)
 
-Rewrite [TheMovieDB app](https://github.com/dvtai113/TheMovieDB) with Flutter
+Rewrite [TheMovieDB app](https://github.com/dvtai113/TheMovieDB) with Flutter (and Redux)
 
 
 ## Getting Started

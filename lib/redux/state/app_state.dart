@@ -2,6 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
+import 'package:the_movie_db/redux/state/movie_detail_state.dart';
 
 @immutable
 class AppState {
@@ -11,11 +12,14 @@ class AppState {
   final bool moviesDownloading;
   final List<Movie> homeMovies;
 
+  final MovieDetailState movieDetailState;
+
   AppState({
     this.initialDataDownloading = false,
     this.imagesConfig,
     this.moviesDownloading = false,
     this.homeMovies,
+    this.movieDetailState,
   });
 
   AppState copyWith({
@@ -23,6 +27,7 @@ class AppState {
     ImagesConfig imagesConfig,
     bool moviesDownloading,
     List<Movie> movies,
+    MovieDetailState movieDetailState,
   }) {
     return AppState(
       initialDataDownloading:
@@ -30,6 +35,7 @@ class AppState {
       imagesConfig: imagesConfig ?? this.imagesConfig,
       moviesDownloading: moviesDownloading ?? this.moviesDownloading,
       homeMovies: movies ?? this.homeMovies,
+      movieDetailState: movieDetailState ?? this.movieDetailState,
     );
   }
 

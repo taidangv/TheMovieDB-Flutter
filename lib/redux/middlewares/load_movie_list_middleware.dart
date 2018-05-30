@@ -1,6 +1,6 @@
 import 'package:redux/redux.dart';
 import 'package:the_movie_db/redux/actions/home_movies_actions.dart';
-import 'package:the_movie_db/redux/app_state.dart';
+import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:the_movie_db/data/api-services.dart' as apiService;
 
 List<Middleware<AppState>> createLoadMovieListMiddleware() {

@@ -5,7 +5,7 @@ import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/presentation/widgets/MovieListingWidget.dart';
 import 'package:the_movie_db/redux/actions/home_movies_actions.dart';
-import 'package:the_movie_db/redux/app_state.dart';
+import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 class HomeContentContainer extends StatelessWidget {

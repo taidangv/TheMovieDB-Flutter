@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:the_movie_db/presentation/pages/HomePage.dart';
-import 'package:the_movie_db/redux/app_state.dart';
+import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';

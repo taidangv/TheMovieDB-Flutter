@@ -1,4 +1,4 @@
-import 'package:the_movie_db/redux/app_state.dart';
+import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:redux/redux.dart';
 import 'package:the_movie_db/data/api-services.dart' as apiService;
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';

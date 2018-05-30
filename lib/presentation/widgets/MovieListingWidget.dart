@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
-import 'package:the_movie_db/presentation/pages/MovieDetailsPage.dart';
-import 'package:the_movie_db/presentation/widgets/MovieItemWidget.dart';
+import 'package:the_movie_db/redux/containers/movie_item_container.dart';
 
 class MovieListingWidget extends StatelessWidget {
   MovieListingWidget(this.movies, this.imgConfig);
@@ -16,18 +15,7 @@ class MovieListingWidget extends StatelessWidget {
         itemCount: movies.length,
         itemBuilder: (context, idx) {
           Movie m = movies[idx];
-          return GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => MovieDetailsPage(m)));
-            },
-            child: _buildRow(m),
-          );
+          return MovieItemContainer(movie: m);
         });
-  }
-
-  Widget _buildRow(Movie m) {
-    return MovieItemWidget(
-        key: ObjectKey(m.id), movie: m, imgConfig: imgConfig);
   }
 }

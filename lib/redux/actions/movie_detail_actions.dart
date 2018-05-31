@@ -2,6 +2,8 @@ import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/model/MovieDetails.dart';
 
+// movie details actions
+
 class LoadMovieDetailAction {
   final Movie overview;
 
@@ -19,6 +21,10 @@ class MovieDetailNotLoadedAction {
 
   MovieDetailNotLoadedAction(this.error);
 }
+
+// casts of movie actions
+
+class CleanUpCastsOfMovieAction {}
 
 class LoadCastsOfMovieAction {
   final int movieId;

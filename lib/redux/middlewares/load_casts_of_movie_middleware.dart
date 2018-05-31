@@ -17,5 +17,6 @@ Middleware<AppState> _createLoadCasts() {
         .getCast((action as LoadCastsOfMovieAction).movieId)
         .then((casts) => store.dispatch(CastsLoadedAction(casts)))
         .catchError((error) => store.dispatch(CastsNotLoadedAction(error)));
+    next(action);
   };
 }

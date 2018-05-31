@@ -36,7 +36,7 @@ class ReduxApp extends StatelessWidget {
 }
 
 ThemeData _appTheme(BuildContext context) {
-  return ThemeData(
+  return ThemeData.dark().copyWith(
       primaryColor: Color(0xFF0D1C34),
       backgroundColor: Color(0xFF161D29),
       accentColor: Color(0xFFF9473A),

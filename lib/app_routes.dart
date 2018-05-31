@@ -8,8 +8,8 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> create() {
     return {
-      AppRoutes.home: (context) => AppLoadingContainer(),
-      AppRoutes.movieDetail: (context) => MovieDetailsPage(),
+      home: (context) => AppLoadingContainer(),
+      movieDetail: (context) => MovieDetailsPage(),
     };
   }
 }

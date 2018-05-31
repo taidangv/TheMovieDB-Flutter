@@ -7,6 +7,7 @@ import 'package:the_movie_db/redux/reducers/app_state_reducer.dart';
 import 'package:the_movie_db/redux/middlewares/load_initial_data_middleware.dart';
 import 'package:the_movie_db/redux/middlewares/load_movie_list_middleware.dart';
 import 'package:the_movie_db/redux/middlewares/load_movie_detail_middleware.dart';
+import 'package:the_movie_db/redux/middlewares/load_casts_of_movie_middleware.dart';
 
 void main() => runApp(ReduxApp());
 
@@ -17,7 +18,8 @@ class ReduxApp extends StatelessWidget {
     middleware: []
       ..addAll(createInitialDataMiddleware())
       ..addAll(createLoadMovieListMiddleware())
-      ..addAll(createLoadMovieDetailMiddleware()),
+      ..addAll(createLoadMovieDetailMiddleware())
+      ..addAll(createLoadCastsOfMovieMiddleware()),
   );
 
   @override

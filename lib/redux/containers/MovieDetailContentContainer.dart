@@ -5,9 +5,9 @@ import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/model/MovieDetails.dart';
 import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/presentation/widgets/BackdropWidget.dart';
-import 'package:the_movie_db/presentation/widgets/CastListingWidget.dart';
 import 'package:the_movie_db/presentation/widgets/MoviePrimaryInfoWidget.dart';
 import 'package:the_movie_db/presentation/widgets/PosterDescriptionWidget.dart';
+import 'package:the_movie_db/redux/containers/CastListingContainer.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -56,7 +56,7 @@ class MovieDetailContentContainer extends StatelessWidget {
       padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
       child: new Container(
         height: 220.0,
-        child: CastListingWidget(vm.overview.id),
+        child: CastListingContainer(movieId: vm.overview.id),
       ),
     );
   }

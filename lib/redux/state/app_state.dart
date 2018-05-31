@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:the_movie_db/model/Cast.dart';
 import 'package:the_movie_db/model/Genre.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
@@ -13,6 +14,7 @@ class AppState {
   final List<Movie> homeMovies;
 
   final MovieDetailState movieDetailState;
+  final List<Cast> castsOfSpecifiedMovie;
 
   AppState({
     this.initialDataDownloading = false,
@@ -20,6 +22,7 @@ class AppState {
     this.moviesDownloading = false,
     this.homeMovies,
     this.movieDetailState,
+    this.castsOfSpecifiedMovie,
   });
 
   AppState copyWith({
@@ -28,6 +31,7 @@ class AppState {
     bool moviesDownloading,
     List<Movie> movies,
     MovieDetailState movieDetailState,
+    List<Cast> castOfSpecifiedMovie,
   }) {
     return AppState(
       initialDataDownloading:
@@ -36,6 +40,7 @@ class AppState {
       moviesDownloading: moviesDownloading ?? this.moviesDownloading,
       homeMovies: movies ?? this.homeMovies,
       movieDetailState: movieDetailState ?? this.movieDetailState,
+      castsOfSpecifiedMovie: castOfSpecifiedMovie ?? this.castsOfSpecifiedMovie,
     );
   }
 

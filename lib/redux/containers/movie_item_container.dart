@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
+import 'package:the_movie_db/app_routes.dart';
 import 'package:the_movie_db/model/ImagesConfig.dart';
 import 'package:the_movie_db/model/Movie.dart';
 import 'package:the_movie_db/presentation/pages/MovieDetailsPage.dart';
@@ -44,9 +45,7 @@ class _ViewModel {
       imagesConfig: store.state.imagesConfig,
       onItemClicked: (context, movie) {
         store.dispatch(LoadMovieDetailAction(movie));
-        Navigator
-            .of(context)
-            .push(MaterialPageRoute(builder: (context) => MovieDetailsPage()));
+        Navigator.pushNamed(context, AppRoutes.movieDetail);
       },
     );
   }

@@ -7,7 +7,6 @@ import 'package:the_movie_db/redux/state/movie_detail_state.dart';
 
 @immutable
 class AppState {
-  final bool initialDataDownloading;
   final ImagesConfig imagesConfig;
 
   final bool moviesDownloading;
@@ -17,7 +16,6 @@ class AppState {
   final List<Cast> castsOfSpecifiedMovie;
 
   AppState({
-    this.initialDataDownloading = false,
     this.imagesConfig,
     this.moviesDownloading = false,
     this.homeMovies,
@@ -34,8 +32,6 @@ class AppState {
     List<Cast> castOfSpecifiedMovie,
   }) {
     return AppState(
-      initialDataDownloading:
-          initialDataDownloading ?? this.initialDataDownloading,
       imagesConfig: imagesConfig ?? this.imagesConfig,
       moviesDownloading: moviesDownloading ?? this.moviesDownloading,
       homeMovies: movies ?? this.homeMovies,
@@ -44,5 +40,5 @@ class AppState {
     );
   }
 
-  factory AppState.loading() => AppState(initialDataDownloading: true);
+  factory AppState.loading() => AppState();
 }

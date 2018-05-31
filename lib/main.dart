@@ -3,7 +3,7 @@ import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/app_routes.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
-import 'package:the_movie_db/redux/reducers/app_state_reducer.dart';
+import 'package:the_movie_db/redux/reducers/root_reducer.dart';
 import 'package:the_movie_db/redux/middlewares/load_initial_data_middleware.dart';
 import 'package:the_movie_db/redux/middlewares/load_movie_list_middleware.dart';
 import 'package:the_movie_db/redux/middlewares/load_movie_detail_middleware.dart';
@@ -13,7 +13,7 @@ void main() => runApp(ReduxApp());
 
 class ReduxApp extends StatelessWidget {
   final reduxStore = Store<AppState>(
-    appStateReducer,
+    rootReducer,
     initialState: AppState.loading(),
     middleware: []
       ..addAll(createInitialDataMiddleware())

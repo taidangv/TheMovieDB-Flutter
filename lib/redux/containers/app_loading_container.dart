@@ -39,6 +39,6 @@ class _ViewModel {
   _ViewModel(this.initialDataDownloading);
 
   static _ViewModel fromStore(Store<AppState> store) {
-    return _ViewModel(store.state.initialDataDownloading);
+    return _ViewModel(store.state.imagesConfig == null);
   }
 }

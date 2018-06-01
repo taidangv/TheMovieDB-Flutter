@@ -36,8 +36,18 @@ class _ViewModel {
   bool isLoading() => casts == null;
 
   static _ViewModel fromStore(Store<AppState> store) {
+    List<Cast> casts = store.state.castsOfSpecifiedMovie;
+    if (casts != null) {
+      List<Cast> filteredCasts = List();
+      casts.forEach((c) {
+        if (c.profilePath != null && c.profilePath.isNotEmpty)
+          filteredCasts.add(c);
+      });
+      casts = filteredCasts;
+    }
+
     return _ViewModel(
-      casts: store.state.castsOfSpecifiedMovie,
+      casts: casts,
       imgConfig: store.state.imagesConfig,
     );
   }

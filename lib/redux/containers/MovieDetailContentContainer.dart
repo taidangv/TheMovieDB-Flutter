@@ -7,7 +7,7 @@ import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/presentation/widgets/BackdropWidget.dart';
 import 'package:the_movie_db/presentation/widgets/MoviePrimaryInfoWidget.dart';
 import 'package:the_movie_db/presentation/widgets/PosterDescriptionWidget.dart';
-import 'package:the_movie_db/redux/containers/CastListingContainer.dart';
+import 'package:the_movie_db/redux/containers/cast_listing_container.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/redux/state/selectors.dart';

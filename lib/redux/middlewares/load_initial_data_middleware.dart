@@ -4,14 +4,12 @@ import 'package:the_movie_db/data/api-services.dart' as apiService;
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';
 
 List<Middleware<AppState>> createInitialDataMiddleware() {
-  final loadImagesConfig = _createLoadImagesConfig();
-
   return [
-    TypedMiddleware<AppState, LoadImagesConfigAction>(loadImagesConfig),
+    TypedMiddleware<AppState, LoadImagesConfigAction>(_loadImagesConfig()),
   ];
 }
 
-Middleware<AppState> _createLoadImagesConfig() {
+Middleware<AppState> _loadImagesConfig() {
   return (Store<AppState> store, action, NextDispatcher next) {
     apiService
         .getImagesConfig()

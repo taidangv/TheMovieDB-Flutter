@@ -4,14 +4,12 @@ import 'package:the_movie_db/redux/actions/movie_detail_actions.dart';
 import 'package:the_movie_db/data/api-services.dart' as apiService;
 
 List<Middleware<AppState>> createLoadCastsOfMovieMiddleware() {
-  final loadCasts = _createLoadCasts();
-
   return [
-    TypedMiddleware<AppState, LoadCastsOfMovieAction>(loadCasts),
+    TypedMiddleware<AppState, LoadCastsOfMovieAction>(_loadCasts()),
   ];
 }
 
-Middleware<AppState> _createLoadCasts() {
+Middleware<AppState> _loadCasts() {
   return (Store<AppState> store, action, NextDispatcher next) {
     store.dispatch(CleanUpCastsOfMovieAction());
     apiService

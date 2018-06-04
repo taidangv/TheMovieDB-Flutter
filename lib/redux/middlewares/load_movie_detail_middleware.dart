@@ -4,14 +4,12 @@ import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:the_movie_db/data/api-services.dart' as apiService;
 
 List<Middleware<AppState>> createLoadMovieDetailMiddleware() {
-  final loadMovieDetail = _createLoadMovieDetail();
-
   return [
-    TypedMiddleware<AppState, LoadMovieDetailAction>(loadMovieDetail),
+    TypedMiddleware<AppState, LoadMovieDetailAction>(_loadMovieDetail()),
   ];
 }
 
-Middleware<AppState> _createLoadMovieDetail() {
+Middleware<AppState> _loadMovieDetail() {
   return (Store<AppState> store, action, NextDispatcher next) {
     apiService
         .getMovieDetails((action as LoadMovieDetailAction).overview.id)

@@ -8,6 +8,7 @@ import 'package:the_movie_db/presentation/widgets/MovieItemWidget.dart';
 import 'package:the_movie_db/redux/actions/movie_detail_actions.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:the_movie_db/redux/state/selectors.dart';
 
 class MovieItemContainer extends StatelessWidget {
   final Movie movie;
@@ -42,7 +43,7 @@ class _ViewModel {
 
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
-      imagesConfig: store.state.imagesConfig,
+      imagesConfig: imagesConfigSelector(store.state),
       onItemClicked: (context, movie) {
         store.dispatch(LoadMovieDetailAction(movie));
         Navigator.pushNamed(context, AppRoutes.movieDetail);

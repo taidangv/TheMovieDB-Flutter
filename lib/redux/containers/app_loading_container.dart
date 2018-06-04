@@ -5,6 +5,7 @@ import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/redux/actions/initial_data_actions.dart';
+import 'package:the_movie_db/redux/state/selectors.dart';
 
 class AppLoadingContainer extends StatelessWidget {
   @override
@@ -39,6 +40,6 @@ class _ViewModel {
   _ViewModel(this.initialDataDownloading);
 
   static _ViewModel fromStore(Store<AppState> store) {
-    return _ViewModel(store.state.imagesConfig == null);
+    return _ViewModel(imagesConfigSelector(store.state) == null);
   }
 }

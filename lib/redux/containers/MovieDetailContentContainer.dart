@@ -10,6 +10,7 @@ import 'package:the_movie_db/presentation/widgets/PosterDescriptionWidget.dart';
 import 'package:the_movie_db/redux/containers/CastListingContainer.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:the_movie_db/redux/state/selectors.dart';
 
 class MovieDetailContentContainer extends StatelessWidget {
   @override
@@ -79,9 +80,9 @@ class _ViewModel {
 
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
-      overview: store.state.movieDetailState.overview,
-      details: store.state.movieDetailState.details,
-      imagesConfig: store.state.imagesConfig,
+      overview: movieDetailStateSelector(store.state).overview,
+      details: movieDetailStateSelector(store.state).details,
+      imagesConfig: imagesConfigSelector(store.state),
     );
   }
 }

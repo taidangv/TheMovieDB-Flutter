@@ -7,6 +7,7 @@ import 'package:the_movie_db/presentation/widgets/MovieListingWidget.dart';
 import 'package:the_movie_db/redux/actions/home_movies_actions.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:the_movie_db/redux/state/selectors.dart';
 
 class HomeContentContainer extends StatelessWidget {
   @override
@@ -40,9 +41,9 @@ class _ViewModel {
 
   static _ViewModel fromModel(Store<AppState> store) {
     return _ViewModel(
-      moviesDownloading: store.state.moviesDownloading,
-      movies: store.state.homeMovies,
-      imagesConfig: store.state.imagesConfig,
+      moviesDownloading: moviesDownloadingSelector(store.state),
+      movies: homeMoviesSelector(store.state),
+      imagesConfig: imagesConfigSelector(store.state),
     );
   }
 }

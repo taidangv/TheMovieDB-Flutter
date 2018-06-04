@@ -7,6 +7,7 @@ import 'package:the_movie_db/presentation/widgets/AppSpinnerWidget.dart';
 import 'package:the_movie_db/presentation/widgets/CastListViewWidget.dart';
 import 'package:the_movie_db/redux/actions/movie_detail_actions.dart';
 import 'package:the_movie_db/redux/state/app_state.dart';
+import 'package:the_movie_db/redux/state/selectors.dart';
 
 class CastListingContainer extends StatelessWidget {
   CastListingContainer({@required this.movieId});
@@ -36,7 +37,7 @@ class _ViewModel {
   bool isLoading() => casts == null;
 
   static _ViewModel fromStore(Store<AppState> store) {
-    List<Cast> casts = store.state.castsOfSpecifiedMovie;
+    List<Cast> casts = castsOfMovieSelector(store.state);
     if (casts != null) {
       List<Cast> filteredCasts = List();
       casts.forEach((c) {
@@ -48,7 +49,7 @@ class _ViewModel {
 
     return _ViewModel(
       casts: casts,
-      imgConfig: store.state.imagesConfig,
+      imgConfig: imagesConfigSelector(store.state),
     );
   }
 }
